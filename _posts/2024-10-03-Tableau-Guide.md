@@ -28,8 +28,10 @@ Using Tableau offers a range of benefits for anyone working with data, regardles
 
 1. **Data Democratization**
 Tableau makes data accessible to everyone in your organization. You no longer need to rely on a dedicated data team to     produce insights. The easy-to-navigate interface lets people of all experience levels create and explore visualizations themselves.
+
 2. **Faster Decision Making**
 With real-time data integration and visualization, decision-makers can react quickly to trends, problems, or opportunities. Instead of waiting for static reports, they can explore interactive dashboards and make informed decisions on the spot.
+
 3. **Improved Data Accuracy**
 With Tableau, you can centralize your data and connect various data sources into a single platform. This ensures data accuracy and consistency while reducing the chances of errors, especially when compared to manual processes like copying data across spreadsheets.
 
@@ -46,34 +48,34 @@ Now that we understand what Tableau is and why it’s a valuable tool, let’s g
 ### Step 1: Connecting to Your Data
 1.	Launch Tableau: Open Tableau Public (the free version).
 2.	Select Your Data Source: Tableau offers a wide variety of data connection options. You can connect to:
-  o	 Files like Excel, CSV, PDFs
-  o	Databases like MySQL, SQL Server, and Oracle
-  o	Cloud services like Google Analytics and Salesforce
-  o	Web data connectors for pulling in APIs and other web-based data.
-Simply click on “Connect” and select your desired data source.
+      - Files like Excel, CSV, PDFs
+      - Databases like MySQL, SQL Server, and Oracle
+      - Cloud services like Google Analytics and Salesforce
+      - Web data connectors for pulling in APIs and other web-based data
+Just click on “Connect” and select your desired data source.
 
 ### Step 2: Upload the Data
 Once you select your data source, Tableau will prompt you to upload the file or enter credentials to connect to the   database. For example, if you're connecting to an Excel file, you will upload the spreadsheet and then Tableau will display  a preview of the data within the interface.
 
 ### Step 3: Preparing Your Data
 You can clean your data directly within Tableau before creating any visualizations. This is super convenient because it allows you to do everything in Tableau without requiring the use of another program like R or Python to clean the data. Tableau offers basic data wrangling tools such as:
-  •	Filtering rows
-  •	Pivoting columns
-  •	Creating calculated fields
-  •	Joining multiple data tables
+      - Filtering rows
+      - Pivoting columns
+      - Creating calculated fields
+      - Joining multiple data tables
   
 ## Creating Cool Visualizations in Tableau
 
 Once your data is uploaded and cleaned, you're ready to create a visualization. Tableau supports a wide variety of visual types:
 
 1. **Bar Chart**
-A bar chart is one of the most common and easy-to-read visualizations for comparing values across categories.
+  A bar chart is one of the most common and easy-to-read visualizations for comparing values across categories.
 2. **Heat Map**
-A heat map visually represents data where values are represented by color. It’s useful for showing relationships between two factors.
+  A heat map visually represents data where values are represented by color. It’s useful for showing relationships between two factors.
 3. **Scatter Plot**
-Scatter plots are ideal for visualizing correlations between two numerical variables.
+  Scatter plots are ideal for visualizing correlations between two numerical variables.
 4. **Geographic Maps**
-Tableau’s powerful mapping capabilities let you create geographic visualizations (e.g., mapping customer locations).
+  Tableau’s powerful mapping capabilities let you create geographic visualizations (e.g., mapping customer locations).
 
 ## How to Create a Dashboard in Tableau
 
@@ -91,9 +93,10 @@ Dashboards in Tableau are an excellent way to combine several visualizations int
 •	Tableau allows you to add filters that can apply across multiple charts in your dashboard. For example, you can create a filter for "Region" so that when you select a region, all the charts on the dashboard update accordingly.
 •	You can also add interactive features like hover-over tooltips and click-to-filter options, allowing users to explore the data more deeply.
 
-**Step 4: Publish and Share**
+#### Step 4: Publish and Share
 Once your dashboard is complete, you can publish it on Tableau Server, Tableau Public, or Tableau Online. You can also export it as a PDF or image for distribution.
 
-**Conclusion**
+## Conclusion
+
 Tableau is an incredibly versatile tool that makes data analysis accessible and impactful for businesses and individuals alike. From easy data import and cleansing features to advanced visualizations and dashboards, Tableau allows anyone to create meaningful insights from complex data. Whether you're creating a simple bar chart or a complex interactive dashboard, Tableau’s intuitive platform makes it easy to unlock the full potential of your data. With these tools at your fingertips, you’re well on your way to becoming a data visualization expert!
 
