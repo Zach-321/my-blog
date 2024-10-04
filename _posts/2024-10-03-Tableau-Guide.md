@@ -3,7 +3,7 @@ layout: post
 title:  "A Complete Guide to Tableau: What It Is, Why You Should Use It, and How to Get Started"
 author: Zach Perry
 description: A Beginner friendly guide to the ins and outs of the data visualization tool Tableau
-image: /assets/images/blog-image.jpg
+image: /assets/images/TABLEAU_LOGO.jpg
 ---
 
 In the age of big data, companies are constantly seeking ways to better understand their information and make data-driven decisions. One of the most powerful tools available today for data visualization is **Tableau**. Whether you're a data analyst, business leader, or just a beginner in the field, Tableau offers an intuitive platform to transform raw data into insightful visualizations. This guide will dive into what Tableau is, why it’s such a valuable tool, and how you can use it for data-driven insights.
