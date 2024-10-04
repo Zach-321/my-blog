@@ -82,16 +82,16 @@ Once your data is uploaded and cleaned, you're ready to create a visualization. 
 Dashboards in Tableau are an excellent way to combine several visualizations into a single, interactive display. Here’s how you can create your first dashboard:
 
 ### Step 1: Start with a Dashboard Layout
-•	Click on the “Dashboard” tab at the bottom of your Tableau interface.
-•	In the new dashboard workspace, you can customize the size and layout of your dashboard based on your viewing needs (e.g., for desktop, tablet, or mobile).
+Click on the “Dashboard” tab at the bottom of your Tableau interface.
+In the new dashboard workspace, you can customize the size and layout of your dashboard based on your viewing needs (e.g., for desktop, tablet, or mobile).
 
 ### Step 2: Add Visualizations
-•	Drag and drop the visualizations (charts, maps, etc.) you’ve created from the left-hand pane onto your dashboard.
-•	You can arrange and resize them however you like, ensuring your data is easy to interpret and visually appealing.
+Drag and drop the visualizations (charts, maps, etc.) you’ve created from the left-hand pane onto your dashboard.
+You can arrange and resize them however you like, ensuring your data is easy to interpret and visually appealing.
 
 ### Step 3: Add Filters and Interactivity
-•	Tableau allows you to add filters that can apply across multiple charts in your dashboard. For example, you can create a filter for "Region" so that when you select a region, all the charts on the dashboard update accordingly.
-•	You can also add interactive features like hover-over tooltips and click-to-filter options, allowing users to explore the data more deeply.
+Tableau allows you to add filters that can apply across multiple charts in your dashboard. For example, you can create a filter for "Region" so that when you select a region, all the charts on the dashboard update accordingly.
+You can also add interactive features like hover-over tooltips and click-to-filter options, allowing users to explore the data more deeply.
 
 #### Step 4: Publish and Share
 Once your dashboard is complete, you can publish it on Tableau Server, Tableau Public, or Tableau Online. You can also export it as a PDF or image for distribution.
