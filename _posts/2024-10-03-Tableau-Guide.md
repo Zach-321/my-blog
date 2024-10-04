@@ -69,17 +69,18 @@ You can clean your data directly within Tableau before creating any visualizatio
 Once your data is uploaded and cleaned, you're ready to create a visualization. Tableau supports a wide variety of visual types:
 
 1. **Bar Chart**
-   ![Bar Chart](/assets/images/bar_chart.png)
   * A bar chart is one of the most common and easy-to-read visualizations for comparing values across categories.
+    <img src="/assets/images/bar_chart.png" alt="Example of a Bar Chart in Tableau" style="width:450px;"/>
 2. **Heat Map**
-    ![Heat Map](/assets/images/heat_map.png)
   * A heat map visually represents data where values are represented by color. It’s useful for showing relationships between two factors.
+     <img src="/assets/images/heat_map.png" alt="Example of a Heat Map in Tableau" style="width:450px;"/>
 3. **Scatter Plot**
-    ![Scatter Plot](/assets/images/scatter_plot.png)
   * Scatter plots are ideal for visualizing correlations between two numerical variables.
+     <img src="/assets/images/scatter_plot.png" alt="Example of a Scatter Plot in Tableau" style="width:450px;"/>
 4. **Geographic Maps**
-    ![Geographic Map](/assets/images/geo_map.png)
-  * Tableau’s powerful mapping capabilities let you create geographic visualizations (e.g., mapping customer locations).
+  * Tableau’s powerful mapping capabilities let you create geographic visualizations (e.g., mapping customer locations)
+
+    <img src="/assets/images/geo_map.png" alt="Example of a Geographic Map in Tableau" style="width:450px;"/>
 
 ## How to Create a Dashboard in Tableau
 
