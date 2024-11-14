@@ -92,6 +92,9 @@ This graph shows pretty consistent growth through all presidents. However, the t
 
 ## Conclusion
 
+After that nice stroll through American history, lets come back to the present. At the start of this blog I said I wanted to determine if voters are justified in trusting Republicans over Democrats when it comes to the economy, and the results are kind of inconclusive. One party was clearly better than the other for only one benchmark, the rest were fairly even. Democrats are definitely better on unemployment, but beyond that not much can be said. So, I would say the voters are slightly incorrect, but they're close enough.
+
+Isn't economic data so much fun? If you want to mess around with the FRED API you can sign up for an API key [here](https://fred.stlouisfed.org/docs/api/api_key.html) by making an account. If you want to use my data you can visit my repo, linked above and [right here](https://github.com/Zach-321/Data_Curation_Repo). Have fun!
 
 
 
