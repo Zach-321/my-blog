@@ -53,3 +53,10 @@ df = df.astype({'Fin_Market_Interest_Rates': float, 'CPI': float, 'Num_Workers(t
 df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
 ```
 That might look like a lot, but its really just a big while loop that makes the API request for a benchmark, then cleans the data and adds it to a master data frame and repeats. 
+
+For more info on the variables I chose, check out [my repo](https://github.com/Zach-321/Data_Curation_Repo)
+
+## Analysis
+
+![CPI](https://github.com/user-attachments/assets/bc4db114-b828-4f9b-b0cb-6f88ff75efe7)
+
