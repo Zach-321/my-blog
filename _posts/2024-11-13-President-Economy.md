@@ -71,5 +71,7 @@ CPI does not show one party being better than the other. There has recently been
 ### Unemployment
 ![unemploy](https://github.com/user-attachments/assets/dc3dbd84-43e5-4e71-a02b-2742c122c4f9)
 
+This variable seems a lot more telling. There is a clear trend of spikes in unemployment under Republicans and big drops under Democrats.
+
 
 
