@@ -51,6 +51,7 @@ df = df.astype({'Fin_Market_Interest_Rates': float, 'CPI': float, 'Num_Workers(t
                 'Unemployment_Rate' : float,'Work_Partic_Rate_Women' : float, 'GDP(billions)': float, 
                  'Work_Partic_Rate_All' : float, 'Real_GDP_per_Capita' : float, 'Hourly_Wages_Private($)' : float})
 df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
+df.describe()
 ```
 That might look like a lot, but its really just a big while loop that makes the API request for a benchmark, then cleans the data and adds it to a master data frame and repeats. 
 
