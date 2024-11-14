@@ -3,7 +3,7 @@ layout: post
 title:  "Presidents and the Economy"
 author: Zach Perry
 description: "Which political party in the White House is better for the economy?" 
-image:
+image: /assets/images/president.jpg
 ---
 
 I don't know if you knew this, but the election just happened. During every election, media organizations conduct exit polls to learn what type of people voted for each candidate and why. One of the most interesting questions asked in these polls is "Who do you trust to run the economy better?" In [2024](https://www.nbcnews.com/politics/2024-elections/exit-polls) 52% of voters answered Trump, and 46% answered Harris. In [2020](https://www.cnn.com/election/2020/exit-polls/president/national-results) it was a 49-49 tie between Trump and Biden. And in [2016](https://www.cnn.com/election/2016/results/exit-polls) it was 48-46 in favor of Trump over Clinton. So, just going back 3 presidential elections it seems that voters slightly favor Republican candidates when it comes to the economy. My question is: Are they right? Does historical data agree that Republican presidents are better for the economy them Democrats?
