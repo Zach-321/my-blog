@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "A Complete Guide to Tableau: What It Is, Why You Should Use It, and How to Get Started"
+title:  "Presidents and the Economy"
 author: Zach Perry
 description: A Beginner friendly guide to the ins and outs of the data visualization tool Tableau
 image: /assets/images/TABLEAU_LOGO.jpg
