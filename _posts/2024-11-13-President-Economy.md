@@ -71,7 +71,29 @@ CPI does not show one party being better than the other. There has recently been
 ### Unemployment
 ![unemploy](https://github.com/user-attachments/assets/dc3dbd84-43e5-4e71-a02b-2742c122c4f9)
 
-This variable seems a lot more telling. There is a clear trend of spikes in unemployment under Republicans and big drops under Democrats.
+This variable seems a lot more telling. There is a clear trend of spikes in unemployment under Republicans and big drops under Democrats. This is most evident in the massive increase in unemployment right at the end of W. Bush's (R) presidency in 2008, then it steadily decreasing under Obama(D). Also, the 4 highest peaks in unemployment were all under Republican presidents. Democrats definitely win on unemployment.
+
+### Workforce Participation
+![workforce](https://github.com/user-attachments/assets/7791143d-d49f-4721-b149-b5961f48633a)
+
+The workforce is defined as all employed people and all unemployed people who are currently seeking work. This graph shows workforce participation rate for all Americans and specifically for women. Women's participation rate is well below the total rate, but had been increasing at a faster rate until W. Bush (R) in 2001 where it levels off and has decreased slightly since then. The total rate also starts to decline at the same time. This benchmark is also pretty even between the two parties.
+
+### Federal Funds Rate
+![FedFunds](https://github.com/user-attachments/assets/6558c836-ab23-44a7-9a81-e6ddb8ea2a2f)
+
+The Federal Funds Rate is the interest rate that banks use to loan money to each other. The US Federal Reserve sets a target range for banks to operate in. A higher rate is typically indicative of high inflation and high unemployment. So lower is generally better. The early 1980s under Reagan (R) had record high unemployment, which was why the rate was so high. There are other big spikes under Carter (D) and Ford (R), but the rest of the graph is not too bad. This benchmark also appears to be pretty even, but I think I would give a slight edge to Democrats.
+
+### Real GDP Per Capita
+![realGDP](https://github.com/user-attachments/assets/74f866b6-849a-49c9-8f3d-729bb77eb81e)
+
+This is the big one. GDP stands for Gross Domestic Product, the total value of all goods produced in the US. Real GDP means that it is in 2017 USD to account for inflation and per capita accounts for changes in population. 
+
+This graph shows pretty consistent growth through all presidents. However, the three biggest dips all happened under Republicans. The huge drop under Trump (R) was caused by COVID and GDP quickly recovered. The other two drops were under Reagan (R) in 1982 and under W. Bush (R) in 2008. Those two names have come up alot in this blog, which leads me to believe that the economy was not great those years. It also looks like real GDP has been growing faster under Biden (D) then ever before. I would Democrats an edge for this benchmark.
+
+## Conclusion
+
+
+
 
 
 
