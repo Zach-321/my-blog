@@ -63,7 +63,7 @@ For more info on the variables I chose, check out [my repo](https://github.com/Z
 
 The vertical lines represent when a new party is elected to the White House and the color represents which party. Red is Republican and blue is Democrat.
 
-CPI is a measure of inflation so a lower value is better. It starts pretty flat before starting to increase faster with the election of Nixon (R) and continued to increase at a faster rate through Carter (D) before slowing down. It has been increasing at a constant rate since about Reagan (R) in 1980. Recently it has spiked again under Biden(B). 
+CPI is a measure of inflation so a lower value is better. It starts pretty flat before starting to increase faster with the election of Nixon (R) and continued to increase at a faster rate through Carter (D) before slowing down. It has been increasing at a constant rate since about Reagan (R) in 1980. Recently it has spiked again under Biden (D). 
 
 CPI does not show one party being better than the other. There has recently been a big spike under a Democratic president, but that is in line with worldwide inflation so it doesn't seem to be a result of policy.
 
@@ -71,7 +71,7 @@ CPI does not show one party being better than the other. There has recently been
 ### Unemployment
 ![unemploy](https://github.com/user-attachments/assets/dc3dbd84-43e5-4e71-a02b-2742c122c4f9)
 
-This variable seems a lot more telling. There is a clear trend of spikes in unemployment under Republicans and big drops under Democrats. This is most evident in the massive increase in unemployment right at the end of W. Bush's (R) presidency in 2008, then it steadily decreasing under Obama (D). Also, the 4 highest peaks in unemployment were all under Republican presidents. Democrats definitely win on unemployment.
+This benchmark seems a lot more telling. There is a clear trend of spikes in unemployment under Republicans and big drops under Democrats. This is most evident in the massive increase in unemployment right at the end of W. Bush's (R) presidency in 2008, then it steadily decreasing under Obama (D). Also, the 4 highest peaks in unemployment were all under Republican presidents. Democrats definitely win on unemployment.
 
 ### Workforce Participation
 ![workforce](https://github.com/user-attachments/assets/7791143d-d49f-4721-b149-b5961f48633a)
@@ -88,7 +88,7 @@ The Federal Funds Rate is the interest rate that banks use to loan money to each
 
 This is the big one. GDP stands for Gross Domestic Product, the total value of all goods produced in the US. Real GDP means that it is in 2017 USD to account for inflation and per capita accounts for changes in population. 
 
-This graph shows pretty consistent growth through all presidents. However, the three biggest dips all happened under Republicans. The huge drop under Trump (R) was caused by COVID and GDP quickly recovered. The other two drops were under Reagan (R) in 1982 and under W. Bush (R) in 2008. Those two names have come up alot in this blog, which leads me to believe that the economy was not great those years. It also looks like real GDP has been growing faster under Biden (D) then ever before. I would Democrats a small edge for this benchmark.
+This graph shows pretty consistent growth through all presidents. However, the three biggest dips all happened under Republicans. The huge drop under Trump (R) was caused by COVID and GDP quickly recovered. The other two drops under Reagan (R) in 1982 and under W. Bush (R) in 2008 werenpretty small, but bigger than anything else. Those two names have come up alot in this blog, which leads me to believe that those two presidents were not great for the economy. It also looks like real GDP has been growing faster under Biden (D) then ever before. I would give Democrats a very small edge for this benchmark.
 
 ## Conclusion
 
