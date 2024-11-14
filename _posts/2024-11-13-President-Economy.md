@@ -58,5 +58,18 @@ For more info on the variables I chose, check out [my repo](https://github.com/Z
 
 ## Analysis
 
+### CPI
 ![CPI](https://github.com/user-attachments/assets/bc4db114-b828-4f9b-b0cb-6f88ff75efe7)
+
+The vertical lines represent when a new party is elected to the White House and the color represents which party. Red is Republican and blue is Democrat.
+
+CPI is a measure of inflation so a lower value is better. It starts pretty flat before starting to increase faster with the election of Nixon (R) and continued to increase at a faster rate through Carter (D) before slowing down. It has been increasing at a constant rate since about Reagan (R) in 1980. Recently it has spiked again under Biden(B). 
+
+CPI does not show one party being better than the other. There has recently been a big spike under a Democratic president, but that is in line with worldwide inflation so it doesn't seem to be a result of policy.
+
+
+### Unemployment
+![unemploy](https://github.com/user-attachments/assets/dc3dbd84-43e5-4e71-a02b-2742c122c4f9)
+
+
 
