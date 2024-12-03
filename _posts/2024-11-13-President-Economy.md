@@ -15,28 +15,35 @@ To test this I decided to gather data from the [Federal Reserve Economic Data (F
 import pandas as pd
 import requests
 
+
 # read in API key
 with open('api.txt', 'r') as file:
     api_key = file.read()
+
 
 # create list of series IDs that correspond to benchmarks
 ids = ['FEDFUNDS', 'CPIAUCSL', 'PAYEMS', 'UNRATE', 'LNS11300002', 'GDP', 
        'CIVPART', 'A939RX0Q048SBEA', 'CES0500000003']
 
+
 # create a for loop to request each variable dataset from API, clean it, and add it to a master dataframe
+
 
 i = 0
 while i < (len(ids)): # initialize while loop to API request for each ID
     url = f"https://api.stlouisfed.org/fred/series/observations?series_id={ids[i]}&api_key={api_key}&file_type=json"
     response = requests.get(url)
 
+
     data = response.json() 
     variable = pd.DataFrame(data['observations']) # turn requested data into a dataframe
     variable.drop(['realtime_start', 'realtime_end'],axis = 1, inplace = True)
     variable.columns = ['Date', ids[i]] #drop and rename columns
 
+
     if i == 5: # The first 4 values of the GDP ID are just '.' so they need to be removed
         variable = variable.iloc[4:]
+
 
     if i == 0: # create dataframe for first variable
         df = pd.DataFrame(variable)
@@ -44,9 +51,11 @@ while i < (len(ids)): # initialize while loop to API request for each ID
         df = df.merge(variable, on = 'Date', how = 'outer')
     i += 1 # keep looping until all variables have been added
 
+
 # rename columns to proper names
 df.columns = ['Date','Fin_Market_Interest_Rates', 'CPI', 'Num_Workers(thousands)','Unemployment_Rate',
 'Work_Partic_Rate_Women', 'GDP(billions)', 'Work_Partic_Rate_All', 'Real_GDP_per_Capita', 'Hourly_Wages_Private($)']
+
 
 #change data types to correct ones
 df = df.astype({'Fin_Market_Interest_Rates': float, 'CPI': float, 'Num_Workers(thousands)': int, 
