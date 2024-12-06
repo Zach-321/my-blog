@@ -6,120 +6,103 @@ description: Analyzing the relationship between the president and the economy us
 image: "/assets/images/image5.jpg"
 ---
 
-## Steps for creating a new post.  
+I don't know if you knew this, but the election just happened. During every election, media organizations conduct exit polls to learn what type of people voted for each candidate and why. One of the most interesting questions asked in these polls is "Who do you trust to run the economy better?" In [2024](https://www.nbcnews.com/politics/2024-elections/exit-polls) 52% of voters answered Trump, and 46% answered Harris. In [2020](https://www.cnn.com/election/2020/exit-polls/president/national-results) it was a 49-49 tie between Trump and Biden. And in [2016](https://www.cnn.com/election/2016/results/exit-polls) it was 48-46 in favor of Trump over Clinton. So, just going back 3 presidential elections it seems that voters slightly favor Republican candidates when it comes to the economy. My question is: Are they right? Does historical data agree that Republican presidents are better for the economy them Democrats?
 
-* Create a new file in the `_posts` folder called `YYYY-MM-DD-post-name.md`, where YYYY is the year (2023), MM numeric month (01-12), and DD is the numeric day of the month (01-31).  The `post-name` is a short name for the new post with `-` between words.  **You must use this name convention for all new posts.**  
+## Data and API
+To test this I decided to gather data from the [Federal Reserve Economic Data (FRED) API](https://fred.stlouisfed.org/docs/api/fred/). This API is maintained by the federal government and is free to use as long as you sign up for an account with your email to receive an API Key. In the Terms of Service, FRED says you cannot use 'an unreasonable amount of bandwidth' or commit crimes using the API. I'm definitely not doing the second one and I'm only making 9 requests so the first one should be fine as well. So we are good to use the API. To get started, I chose several different 'economic benchmarks' that I will use to judge the health of the economy. Gathering the data from FRED was pretty simple. Its well documented and easy to use. My API requests looked something like:
+```{python}
+# import necessary packages
+import pandas as pd
+import requests
 
-*  Make the YML heading.  All pages in the site need to start with a YML heading.  For posts you should use the following header:
+
+# read in API key
+with open('api.txt', 'r') as file:
+    api_key = file.read()
+
+
+# create list of series IDs that correspond to benchmarks
+ids = ['FEDFUNDS', 'CPIAUCSL', 'PAYEMS', 'UNRATE', 'LNS11300002', 'GDP', 
+       'CIVPART', 'A939RX0Q048SBEA', 'CES0500000003']
+
+
+# create a for loop to request each variable dataset from API, clean it, and add it to a master dataframe
+
+
+i = 0
+while i < (len(ids)): # initialize while loop to API request for each ID
+    url = f"https://api.stlouisfed.org/fred/series/observations?series_id={ids[i]}&api_key={api_key}&file_type=json"
+    response = requests.get(url)
+
+
+    data = response.json() 
+    variable = pd.DataFrame(data['observations']) # turn requested data into a dataframe
+    variable.drop(['realtime_start', 'realtime_end'],axis = 1, inplace = True)
+    variable.columns = ['Date', ids[i]] #drop and rename columns
+
+
+    if i == 5: # The first 4 values of the GDP ID are just '.' so they need to be removed
+        variable = variable.iloc[4:]
+
+
+    if i == 0: # create dataframe for first variable
+        df = pd.DataFrame(variable)
+    else: # add all other variables to created DataFrame
+        df = df.merge(variable, on = 'Date', how = 'outer')
+    i += 1 # keep looping until all variables have been added
+
+
+# rename columns to proper names
+df.columns = ['Date','Fin_Market_Interest_Rates', 'CPI', 'Num_Workers(thousands)','Unemployment_Rate',
+'Work_Partic_Rate_Women', 'GDP(billions)', 'Work_Partic_Rate_All', 'Real_GDP_per_Capita', 'Hourly_Wages_Private($)']
+
+
+#change data types to correct ones
+df = df.astype({'Fin_Market_Interest_Rates': float, 'CPI': float, 'Num_Workers(thousands)': int, 
+                'Unemployment_Rate' : float,'Work_Partic_Rate_Women' : float, 'GDP(billions)': float, 
+                 'Work_Partic_Rate_All' : float, 'Real_GDP_per_Capita' : float, 'Hourly_Wages_Private($)' : float})
+df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
 ```
----
-layout: post
-title:  "Post Name"
-author: Your name
-description: Short yet informative description
-image: /assets/images/blog-image.jpg
----
-```
-* For this theme, the layout should stay as `post`.   All the other fields should be updated with the information for your particular blog post.  The blog image should be a `.jpg` or `.png` file that you should add to the folder `assets/images`.  Don't make it too large or the page will take longer to load (500-800 KB is a good size).  Leave the file path as `/assets/images/` in the header area. 
+That might look like a lot, but its really just a big while loop that makes the API request for a benchmark, then cleans the data and adds it to a master data frame and repeats. 
 
-* Write the body of the blog using markdown.  There are a lot of references for markdown available.  I like the [Markdown Guide](https://www.markdownguide.org) because many of the examples show both the markdown and the html code.  There are separate pages for [basic syntax](https://www.markdownguide.org/basic-syntax/), [extended syntax](https://www.markdownguide.org/extended-syntax/), and a [cheatsheet](https://www.markdownguide.org/cheat-sheet/) for quick reference. 
+For more info on the variables I chose, check out [my repo](https://github.com/Zach-321/Data_Curation_Repo)
 
-* You can also use html code snippets along with the markdown.  Often, using html will give you a little more control and flexibility as demonstrated below.
+## Analysis
 
-This is a change
----
----
+### CPI
+![CPI](https://github.com/user-attachments/assets/bc4db114-b828-4f9b-b0cb-6f88ff75efe7)
 
-### Links 
+The vertical lines represent when a new party is elected to the White House and the color represents which party. Red is Republican and blue is Democrat.
 
-To create a link (internal or external), enclose the link text in brackets (e.g., [Statistics Department]) and then follow it immediately with the URL in parentheses (e.g., (https://statistics.byu.edu)).
+CPI is a measure of inflation so a lower value is better. It starts pretty flat before starting to increase faster with the election of Nixon (R) and continued to increase at a faster rate through Carter (D) before slowing down. It has been increasing at a constant rate since about Reagan (R) in 1980. Recently it has spiked again under Biden (D). 
 
-For example:
-```
-{% raw %}My favorite department at BYU is the [Statistics Department](https://statistics.byu.edu).{% endraw %}
-```
-My favorite department at BYU is the [Statistics Department](https://statistics.byu.edu)
+CPI does not show one party being better than the other. There has recently been a big spike under a Democratic president, but that is in line with worldwide inflation so it doesn't seem to be a result of policy.
 
 
-If you want external links to open in a separate window, you will need to use html code with `target="_blank"` inside the `a` tag. 
+### Unemployment
+![unemploy](https://github.com/user-attachments/assets/dc3dbd84-43e5-4e71-a02b-2742c122c4f9)
 
-For example:
-```
-My favorite department at BYU is the <a href="https:statistics.byu.edu" target="_blank">Statistics Department</a>
-```
-My favorite department at BYU is the <a href="https:statistics.byu.edu" target="_blank">Statistics Department</a>
+This benchmark seems a lot more telling. There is a clear trend of spikes in unemployment under Republicans and big drops under Democrats. This is most evident in the massive increase in unemployment right at the end of W. Bush's (R) presidency in 2008, then it steadily decreasing under Obama (D). Also, the 4 highest peaks in unemployment were all under Republican presidents. Democrats definitely win on unemployment.
 
+### Workforce Participation
+![workforce](https://github.com/user-attachments/assets/7791143d-d49f-4721-b149-b5961f48633a)
 
-----
-----
+The workforce is defined as all employed people and all unemployed people who are currently seeking work. This graph shows workforce participation rate for all Americans and specifically for women. Women's participation rate is well below the total rate, but had been increasing at a faster rate until W. Bush (R) in 2001 where it levels off and has decreased slightly since then. The total rate also starts to decline at the same time. This benchmark is also pretty even between the two parties.
 
-## Internal Links and Files
+### Federal Funds Rate
+![FedFunds](https://github.com/user-attachments/assets/6558c836-ab23-44a7-9a81-e6ddb8ea2a2f)
 
-If you want to have a link that points to another location on your site or if you want to include a file (such as an image or video) you must use the `site.url` and `site.baseurl` variables when making the link reference.  For example, this link to pointing to the [About]({{site.url}}/{{site.baseurl}}/about) page is coded as:
-```
-[About]({% raw %}{{site.url}}/{{site.baseurl}}/about){% endraw %}
-```
-Paths to files should also be referenced with the `site.url` and `site.baseurl` variables (see the section on **Adding Images**).
+The Federal Funds Rate is the interest rate that banks use to loan money to each other. The US Federal Reserve sets a target range for banks to operate in. A higher rate is typically indicative of high inflation and high unemployment. So lower is generally better. The early 1980s under Reagan (R) had record high unemployment, which was why the rate was so high. There are other big spikes under Carter (D) and Ford (R), but the rest of the graph is not too bad. This benchmark also appears to be pretty even, but I think I would give a slight edge to Democrats.
 
----
----
+### Real GDP Per Capita
+![realGDP](https://github.com/user-attachments/assets/74f866b6-849a-49c9-8f3d-729bb77eb81e)
 
-## Adding Images
-*In the examples below, if your image ends with `.png` or `.JPEG`, use the appropriate extension instead of `.jpg`.*  
+This is the big one. GDP stands for Gross Domestic Product, the total value of all goods produced in the US. Real GDP means that it is in 2017 USD to account for inflation and per capita accounts for changes in population. 
 
-Images for the blog will generally but put into the `assets/images` folder.  (You can also create a subfolder for images, but you will need to include the subfolder name in the reference link.) 
+This graph shows pretty consistent growth through all presidents. However, the three biggest dips all happened under Republicans. The huge drop under Trump (R) was caused by COVID and GDP quickly recovered. The other two drops under Reagan (R) in 1982 and under W. Bush (R) in 2008 werenpretty small, but bigger than anything else. Those two names have come up alot in this blog, which leads me to believe that those two presidents were not great for the economy. It also looks like real GDP has been growing faster under Biden (D) then ever before. I would give Democrats a very small edge for this benchmark.
 
-Markdown syntax for including images is `![Fig Name](path/to/image)`.  For example:
-```
-{% raw %}![Figure]({{site.url}}/{{site.baseurl}}/assets/images/image_name.jpg){% endraw %}
-```
-![Figure]({{site.url}}/{{site.baseurl}}/assets/images/image5.jpg)
+## Conclusion
 
----
----
+After that nice stroll through American history, lets come back to the present. At the start of this blog I said I wanted to determine if voters are justified in trusting Republicans over Democrats when it comes to the economy, and the results are kind of inconclusive. One party was clearly better than the other for only one benchmark, the rest were fairly even. Democrats are definitely better on unemployment, but beyond that not much can be said. So, I would say the voters are slightly incorrect, but they're close enough.
 
-### Resizing images
-
-The image I added in the previous section seems a bit large for this post.  Unfortunately,
-there isn't a good way to resize images with markdown, so if you need to resize an image, use html instead of markdown and specify the width in the style parameter as follows:
-
-```
-{% raw %}<img src="{{site.url}}/{{site.baseurl}}/assets/images/image_name.jpg" alt="" style="width:300px;"/>{% endraw %}
-```
-
-(Example with width set to 300 pixels)
-<img src="{{site.url}}/{{site.baseurl}}/assets/images/image5.jpg" alt="" style="width:300px;"/>
-
-
-(Example with width set to 100 pixels)
-<img src="{{site.url}}/{{site.baseurl}}/assets/images/image5.jpg" alt="" style="width:100px;"/>
-
-
-
----
----
----
-
-## Troubleshooting
-
-Here are some things to keep in mind if your blog appearance isn't going as you planned:
-
-**Problem:  The blog post that I created isn't appearing**
-
-Possible Solutions: 
-  - Check your date. GitHub pages won't display blog posts with future dates
-  - Check the yaml header.  If there are any special characters in any of the fields, you need to use quotes around the entire field entry.  The most common culprit is the description.  If you're having trouble, try putting quotes around the entire description
-
----
-
-**Problem:  I know that I made changes to a blog post but the changes aren't appearing**
-
-Possible Solution:
-  - Check the header.  If there are any special characters in any of the fields, you need to use quotes around the entire field entry.  The most common culprit is the description.  If you're having trouble, try putting quotes around the entire description.
-
----
-
-**Problem:  My entire blog has weird formatting**
-
-Possible Solution:
-  - Usually this is an address problem.  Double check your url and baseurl in the `_config` file
+Isn't economic data so much fun? If you want to mess around with the FRED API you can sign up for an API key [here](https://fred.stlouisfed.org/docs/api/api_key.html) by making an account. If you want to use my data you can visit my repo, linked above and [right here](https://github.com/Zach-321/Data_Curation_Repo). Have fun!
